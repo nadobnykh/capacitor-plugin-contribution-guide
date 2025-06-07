@@ -30,10 +30,10 @@ npx cap add android
 
 ## 2. Install your custom NFC plugin
 
-Assuming your plugin is local (e.g. in `../my-nfc-plugin`), install it via npm link or direct path:
+Assuming your plugin is local (e.g. in `../capacitor-nfc-plugin`), install it via npm link or direct path:
 
 ```bash
-npm install ../my-nfc-plugin
+npm install ../capacitor-nfc-plugin
 ```
 
 ---
@@ -44,7 +44,7 @@ Edit `src/App.tsx` with this minimal UI and logic:
 
 ```tsx
 import React, { useEffect, useState } from "react";
-import { NFC } from "my-nfc-plugin";
+import { NFC } from "capacitor-nfc-plugin";
 
 function App() {
   const [available, setAvailable] = useState(false);

@@ -7,8 +7,8 @@
 * Run `npm init @capacitor/plugin` to scaffold the plugin.
 * Set:
 
-  * Plugin name: `nfc-plugin`
-  * Plugin ID: `nfc-plugin`
+  * Plugin name: `capacitor-nfc-plugin`
+  * Plugin ID: `capacitor-nfc-plugin`
   * Supported platforms: `android`, `ios`
 * Review and configure `package.json`, TypeScript setup, and folder structure.
 
