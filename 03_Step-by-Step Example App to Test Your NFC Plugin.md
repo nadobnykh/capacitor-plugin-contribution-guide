@@ -138,101 +138,14 @@ export default App;
 
 ## 4. Sync native projects and run
 
-After plugin and app setup:
 
-```bash
-npx cap sync
-npx cap open ios
-# or
-npx cap open android
-```
-
-Build and run on your device (not simulator) with NFC support.
-
----
-
-## 5. Testing workflow
-
-* Click **Start Scanning**, bring your device near NFC tags.
-* When a tag is read, the details appear in the logs.
-* Use **Write Tag** and **Erase Tag** buttons to modify the detected tag.
-* Use **Stop Scanning** to end the session.
-
----
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-Set of terminal commands needed to fully:
-
-* Build the example app
-* Link your custom Capacitor NFC plugin
-* Sync and run on a real device (Android/iOS)
-
-Let’s go through it **step-by-step** now:
-
----
-
-## ✅ Step 1: Create the Example App
-
-```bash
-npm create vite@latest nfc-example -- --template react-ts
-cd nfc-example
-npm install
-```
-
----
-
-## ✅ Step 2: Initialize Capacitor
-
-```bash
-npm install @capacitor/core @capacitor/cli
-npx cap init nfc-example com.example.nfc
-```
-
-> 🔹 Use any app name and app ID you like (e.g., `"nfc-example"`, `"com.example.nfc"`)
-
----
-
-## ✅ Step 3: Add Platforms
-
-```bash
-npx cap add ios
-npx cap add android
-```
-
----
-
-## ✅ Step 4: Install Your NFC Plugin (Local Dev Mode)
-
-Assuming your plugin is located in a parallel folder `../capacitor-nfc-plugin`:
-
-```bash
-npm install ../capacitor-nfc-plugin
-```
-
-(If published to npm, you'd use `npm install @your-org/capacitor-nfc-plugin`)
-
----
-
-## ✅ Step 5: Add the NFC Plugin to Vite Project
+### ✅ Add the NFC Plugin to Vite Project
 
 Update `src/App.tsx` and create `src/definitions.ts` and `src/index.ts` as explained earlier. Then, wire them up to use your plugin.
 
 ---
 
-## ✅ Step 6: Sync Capacitor Plugins and Code
+### ✅ Sync Capacitor Plugins and Code
 
 ```bash
 npx cap sync
@@ -242,7 +155,9 @@ npx cap sync
 
 ---
 
-## ✅ Step 7: Run on a Real Device
+### ✅ Run on a Real Device
+
+Build and run on your device (not simulator) with NFC support.
 
 ### For iOS:
 
@@ -266,40 +181,14 @@ npx cap open android
 
 ---
 
-## 🔁 Bonus: Hot Reload (Optional)
+## 5. Testing workflow
 
-To auto-rebuild when editing React:
-
-```bash
-npm run dev
-```
-
-Then in another terminal:
-
-```bash
-npx cap copy
-```
-
-Or for full rebuild:
-
-```bash
-npx cap sync
-```
+* Click **Start Scanning**, bring your device near NFC tags.
+* When a tag is read, the details appear in the logs.
+* Use **Write Tag** and **Erase Tag** buttons to modify the detected tag.
+* Use **Stop Scanning** to end the session.
 
 ---
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 Here are the **mandatory changes** you need to make to both **AndroidManifest.xml** and your **Xcode project settings** to support NFC properly on real devices.
@@ -401,11 +290,3 @@ Then launch via:
 * `npx cap open ios` ➜ Build + run in Xcode on real iPhone
 
 ---
-
-Would you like help with:
-
-* Automatically modifying `AndroidManifest.xml` in a plugin hook?
-* Writing unit/integration tests for the plugin?
-* Publishing the plugin on npm?
-
-Let me know how deep you want to go!
